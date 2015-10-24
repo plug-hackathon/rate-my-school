@@ -1,22 +1,28 @@
+<h3>Kommentera</h3>
 <div>
     <div>
-        Larare :
-        <uib-rating ng-model="rate" max="max" readonly="isreadonly" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        Larare:
+        <uib-rating ng-model="teachersRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
     </div>
     
     <div>
         Miljo:
-        <uib-rating ng-model="rate" max="max" readonly="isreadonly" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        <uib-rating ng-model="environmentRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
     </div>
 
     <div>
         Lokaler:
-        <uib-rating ng-model="rate" max="max" readonly="isreadonly" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        <uib-rating ng-model="facilitiesRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
     </div>
 
     <div>
         Bespisning:
-        <uib-rating ng-model="rate" max="max" readonly="isreadonly" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        <uib-rating ng-model="foodRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
     </div>
 </div>
 
+<div>
+    <textarea class="form-control" rows="3"></textarea>
+</div>
+
+ <button type="submit" class="btn btn-primary">Submit</button>
