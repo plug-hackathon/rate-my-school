@@ -6,5 +6,7 @@ angular.module('rate-my-school.factories', ['ngResource'])
     })
 
     .factory('SchoolDetailsFactory', function($resource) {
-        return $resource('js/data/school/:id.json');
+        return $resource('js/data/school/:id.json', {}, {
+            query: { method: "GET", isArray: false }
+        });
     });
