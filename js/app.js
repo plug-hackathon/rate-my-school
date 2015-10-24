@@ -3,6 +3,7 @@ angular.module('rate-my-school', [
     'ngRoute',
     'rate-my-school.factories',
     'rate-my-app.controllers',
+    'ui.bootstrap'
 ])
 
     .config(function($routeProvider){
