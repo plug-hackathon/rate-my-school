@@ -1,26 +1,37 @@
-<h2>Schoolname</h2>
-<ul>
-    <li>Teachers</li>
-    <li>Environment</li>
-    <li>Facilities</li>
-    <li>Food</li>
-</ul>
+<h2>{{school.name}}</h2>
 
-<div class="col-md-6">   
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Contacts</h3>
+<div class="row">
+    <div class="col-sm-4">   
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Medelbetyg</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>Larare: {{school.ratings[0].teachers}}</li>
+                    <li>Miljo: {{school.ratings[0].environment}}</li>
+                    <li>Lokaler:  {{school.ratings[0].facilities}}</li>
+                    <li>Bespisning:  {{school.ratings[0].food}}</li>
+                </ul>
+            </div>
         </div>
-        <div class="panel-body">
-            <p>Gata</p>
-            <p>Postnr Stad</p>
-            <p>Misc info</p>
+    </div>
+
+    <div class="col-sm-3">   
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Kontakt</h3>
+            </div>
+            <div class="panel-body">
+                <p>{{school.street}}</p>
+                <p>{{school.postalcode}} {{school.city}}</p>
+            </div>
         </div>
     </div>
 </div>
 
 <div>
-  <h3>Comments</h3>
+  <h3>Kommentarer</h3>
 
     <p>date</p>
     {{ school }}
