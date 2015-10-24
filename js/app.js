@@ -8,7 +8,6 @@ angular.module('rate-my-school', [
         $routeProvider
             .when('/', {
                 templateUrl: 'templates/home.html',
-                controller: 'HomeCtrl'
             })
             .otherwise({
                 redirectTo: '/'
