@@ -9,6 +9,10 @@ angular.module('rate-my-school', [
 
         $routeProvider
             .when('/', {
+                templateUrl: 'templates/school/list.html',
+                controller: 'SchoolsCtrl'
+            })
+            .when('/skola/:id', {
                 templateUrl: 'templates/school/details.html',
                 controller: 'SchoolDetailsCtrl'
             })

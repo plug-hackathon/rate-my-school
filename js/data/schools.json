@@ -2,7 +2,24 @@
     {
         "id": "1",
         "name": "Teknikum" ,
-        "address": "Nydalav'gen 54b, 35248, Växjö",
+        "city": "Växjö",
+        "postalcode": "35248",
+        "street": "Nydalavägen 54b",
+        "ratings": [
+            {
+                "teachers": 5,
+                "environment": 4,
+                "facilities": 5,
+                "food": 6
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "annatTeknikum" ,
+        "city": "Växjö",
+        "postalcode": "35248",
+        "street": "Nydalavägen 54b",
         "ratings": [
             {
                 "teachers": 5,
