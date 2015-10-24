@@ -9,7 +9,7 @@ angular.module('rate-my-school', [
 
         $routeProvider
             .when('/', {
-                templateUrl: 'templates/schoolDetail.html',
+                templateUrl: 'templates/school/details.html',
                 controller: 'SchoolDetailsCtrl'
             })
             .otherwise({
