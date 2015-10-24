@@ -21,7 +21,10 @@ angular.module('rate-my-school', [
         
             .when('/skola/:id', {
                 templateUrl: 'templates/school/details.html',
-                controller: 'SchoolDetailsCtrl'
+                controller: 'SchoolDetailsCtrl',
+                resolve: {
+                    schools: function (SchoolsService) { return SchoolsService; }
+                }
             })
         
             .otherwise({
