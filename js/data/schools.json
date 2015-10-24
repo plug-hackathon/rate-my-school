@@ -3,7 +3,14 @@
         "id": "1",
         "name": "Teknikum" ,
         "address": "Nydalav'gen 54b, 35248, Växjö",
-        "ratings": "hej"
-        
+        "ratings": [
+            {
+                "teachers": 5,
+                "environment": 4,
+                "facilities": 5,
+                "food": 6,
+            }
+        ]
     }
+    
 ]

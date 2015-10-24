@@ -9,8 +9,8 @@ angular.module('rate-my-school', [
 
         $routeProvider
             .when('/', {
-                templateUrl: 'templates/test.html',
-                controller: 'ListCtrl'
+                templateUrl: 'templates/schoolDetail.html',
+                controller: 'SchoolDetailsCtrl'
             })
             .otherwise({
                 redirectTo: '/'

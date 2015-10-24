@@ -1,5 +1,5 @@
 angular.module('rate-my-app.controllers', [])
 
-    .controller('ListCtrl', function($scope, jsonService){
-        $scope.list = jsonService.query();
+    .controller('SchoolDetailsCtrl', function($scope, jsonService){
+        $scope.schoole = jsonService.query()[0];
     });
