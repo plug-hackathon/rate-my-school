@@ -1,10 +1,18 @@
+<div class="input-group">
+  <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status" ng-model="filterSchools">
+  <span class="input-group-addon">
+    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  </span>
+</div>
+
+
 <table class="table table-striped">
     <tr>
         <th>Namn</th>
         <th>Stad</th>
     </tr>
-    <tr ng-repeat="school in schools">
+    <tr ng-repeat="school in schools | filter: filterSchools">
         <td><a ng-href="#/skola/{{school.id}}">{{ school.name }}</a></td>
-        <td>{{ school.city }}</td>
+        <td>{{ school.municipality }}</td>
     </tr>
 </table>
