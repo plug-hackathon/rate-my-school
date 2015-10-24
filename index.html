@@ -15,8 +15,19 @@
 </head>
 <body ng-app="rate-my-school">
 
-    <div ng-view></div>
+    <div class="container">
+        <div class="input-group">
+            <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </span>
+        </div>
 
+        <!-- Temporary fix to test schoolDetails view -->
+        <!-- <div ng-view></div> -->
+        <div ng-include src="'templates/schoolDetail.html'"></div>
+
+    </div>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-resource/angular-resource.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
