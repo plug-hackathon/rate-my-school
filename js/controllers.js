@@ -21,6 +21,17 @@ angular.module('rate-my-school.controllers', [])
         $scope.facilitiesRate = 5;
         $scope.foodRate = 5;
 
+        $scope.commentText = "";
+
+        $scope.postComment = function () {
+            // TODO: Post the data collected from the view
+            // $scope.teachersRate = 5;
+            // $scope.environmentRate = 5;
+            // $scope.facilitiesRate = 5;
+            // $scope.foodRate = 5;
+            // $scope.commentText;
+        };
+
 	var testParse = function() {
 	    console.log('yey');
         };
