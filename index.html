@@ -15,6 +15,13 @@
 </head>
 <body ng-app="rate-my-school">
 
+<script src="js/facebook-login.js"></script>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+  
     <div class="container">
         <div class="input-group">
             <input type="text" class="form-control" id="inputGroupSuccess1" aria-describedby="inputGroupSuccess1Status">
