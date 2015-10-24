@@ -22,25 +22,13 @@ angular.module('rate-my-school.controllers', [])
             } else {
             Parse.FacebookUtils.logIn(null, {
                 success: function(user) {
-                if (!user.existed()) {
-                    alert("User signed up and logged in through Facebook!");
-                    console.log('sent ratings');
-                } else {
-                    alert("User logged in through Facebook!");
-                    console.log('sent ratings');
-                }
+		    sendRatings();
                 },
                 error: function(user, error) {
-                console.log("User cancelled the Facebook login or did not fully authorize.");
+                    console.log("User cancelled the Facebook login or did not fully authorize.");
                 }
             });
             }
-        }
-
-        function checkLoginState() {
-            FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-            });
         }
 	
         window.fbAsyncInit = function() {
@@ -73,13 +61,21 @@ angular.module('rate-my-school.controllers', [])
 
 	$scope.commentText = "";
 	
-	$scope.sendRatings = function() {
+	$scope.authenticate = function() {
+	    //	    checkLoginState();
+	    FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+            });
+	};
+
+	function sendRatings() {
+	    console.log('ratings sent');
 	    // TODO: Post the data collected from the view
             // $scope.teachersRate = 5;
             // $scope.environmentRate = 5;
             // $scope.facilitiesRate = 5;
             // $scope.foodRate = 5;
             // $scope.commentText;
-	    checkLoginState();
-	};
+	}
+	
     });
