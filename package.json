@@ -1,0 +1,28 @@
+{
+  "name": "rate-my-school",
+  "version": "0.0.1",
+  "description": "Rate my school",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plug-hackathon/rate-my-school.git"
+  },
+  "keywords": [
+    "school",
+    "rate"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plug-hackathon/rate-my-school/issues"
+  },
+  "homepage": "https://github.com/plug-hackathon/rate-my-school#readme",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-resource": "^1.4.7",
+    "http-server": "^0.8.5"
+  }
+}
