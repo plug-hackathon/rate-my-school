@@ -6,7 +6,8 @@ angular.module('rate-my-app.controllers', [])
 
     .controller('SchoolDetailsCtrl', function($scope, $routeParams, SchoolDetailsFactory){
         $scope.school = SchoolDetailsFactory.query({id:$routeParams.id});
-
+	Parse.initialize("3OWEYftfHGwWpvZ612fvlcxHef9ilMcNQhdgAJdj", "ScisaMB6uGwqLjesSyUlTYZfBnOkqyv69Uhveiss");
+	
         $scope.maxRate = 10;
 
         $scope.teacherAverage = 5;
@@ -19,4 +20,7 @@ angular.module('rate-my-app.controllers', [])
         $scope.facilitiesRate = 5;
         $scope.foodRate = 5;
 
+	var testParse = function() {
+	    console.log('yey');
+        };
     });
