@@ -1,17 +1,29 @@
 <h2>{{school.name}}</h2>
 
 <div class="row">
-    <div class="col-sm-4">   
+    <div class="col-sm-6">   
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">Medelbetyg</h3>
             </div>
             <div class="panel-body">
                 <ul>
-                    <li>Larare: {{school.ratings[0].teachers}}</li>
-                    <li>Miljo: {{school.ratings[0].environment}}</li>
-                    <li>Lokaler:  {{school.ratings[0].facilities}}</li>
-                    <li>Bespisning:  {{school.ratings[0].food}}</li>
+                  <li>
+                    Larare: 
+                    <uib-rating ng-model="teacherAverage" max="maxRate" readonly="true"></uib-rating>
+                  </li>
+                  <li>
+                    Miljo:
+                    <uib-rating ng-model="environmentAverage" max="maxRate" readonly="true"></uib-rating>
+                  </li>
+                  <li>
+                    Lokaler:
+                    <uib-rating ng-model="facilitiesAverage" max="maxRate" readonly="true" ></uib-rating>
+                  </li>
+                  <li>
+                    Bespisning:
+                    <uib-rating ng-model="foodAverage" max="maxRate" readonly="true"></uib-rating>
+                  </li>
                 </ul>
             </div>
         </div>
