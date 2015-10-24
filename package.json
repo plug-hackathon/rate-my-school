@@ -23,6 +23,7 @@
   "dependencies": {
     "angular": "^1.4.7",
     "angular-resource": "^1.4.7",
+    "angular-route": "^1.4.7",
     "http-server": "^0.8.5"
   }
 }
