@@ -12,7 +12,7 @@
         <th>Stad</th>
     </tr>
     <tr ng-repeat="school in schools | filter: filterSchools">
-        <td><a ng-href="#/skola/{{school.id}}">{{ school.name }}</a></td>
+        <td><a ng-href="#/skola/{{school.objectId}}">{{ school.name }}</a></td>
         <td>{{ school.municipality }}</td>
     </tr>
 </table>
