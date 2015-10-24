@@ -1,9 +1,9 @@
 angular.module('rate-my-school', [
     'ngResource',
     'ngRoute',
+    'ui.bootstrap',
     'rate-my-school.factories',
-    'rate-my-app.controllers',
-    'ui.bootstrap'
+    'rate-my-app.controllers'
 ])
 
     .config(function($routeProvider){
