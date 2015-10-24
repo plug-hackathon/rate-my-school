@@ -3,7 +3,8 @@ angular.module('rate-my-school', [
     'ngRoute',
     'ui.bootstrap',
     'rate-my-school.factories',
-    'rate-my-app.controllers'
+    'rate-my-school.controllers',
+    'rate-my-school.services',
 ])
 
     .config(function($routeProvider){
@@ -11,7 +12,10 @@ angular.module('rate-my-school', [
         $routeProvider
             .when('/', {
                 templateUrl: 'templates/school/list.html',
-                controller: 'SchoolsCtrl'
+                controller: 'SchoolsCtrl',
+                resolve: {
+                    schools: function (SchoolsService) { return SchoolsService; }
+                }
             })
             .when('/skola/:id', {
                 templateUrl: 'templates/school/details.html',

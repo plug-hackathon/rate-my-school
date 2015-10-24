@@ -1,7 +1,8 @@
-angular.module('rate-my-app.controllers', [])
+angular.module('rate-my-school.controllers', [])
 
-    .controller('SchoolsCtrl', function($scope, SchoolsFactory){
-        $scope.schools = SchoolsFactory.query();
+    .controller('SchoolsCtrl', function($scope, schools){
+        $scope.schools = schools;
+        console.log($scope.schools);
     })
 
     .controller('SchoolDetailsCtrl', function($scope, $routeParams, SchoolDetailsFactory){
