@@ -80,7 +80,7 @@ angular.module('rate-my-school.controllers', [])
             rating.commentText = $scope.commentText;
             console.log(rating);
             rating.$save();
-	        console.log('sending done.');            
+            location.reload();
 	}
 	
     });
