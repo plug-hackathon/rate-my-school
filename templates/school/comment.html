@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8">
       <h2 class="page-header">Comments</h2>
-      <section class="comment-list" ng-repeat"comment in comments">
+      <section class="comment-list" ng-repeat="comment in ratings.results">
         <article class="row">
           <div class="col-md-2 col-sm-2 hidden-xs">
             <figure class="thumbnail">
@@ -20,7 +20,7 @@
                 </header>
                 <div class="comment-post">
                   <p>
-                    {{comment.body}}
+                    {{comment.commentText}}
                   </p>
                 </div>
               </div>
@@ -30,4 +30,8 @@
       </section>
     </div>
   </div>
+</div>
+
+<div>
+{{ ratings.results }}
 </div>
