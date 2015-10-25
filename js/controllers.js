@@ -61,6 +61,8 @@ angular.module('rate-my-school.controllers', [])
         $scope.foodRate = 5;
 
 	    $scope.commentText = "";
+
+        $scope.comment= {author: 'Nisse', body: 'Har gick jag', created: '14 Maj 2015'};
 	
 	    $scope.authenticate = function() {
 	        //	    checkLoginState();

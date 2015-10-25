@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="page-header">Comments</h2>
+      <section class="comment-list" ng-repeat"comment in comments">
+        <article class="row">
+          <div class="col-md-2 col-sm-2 hidden-xs">
+            <figure class="thumbnail">
+              <img class="img-responsive" src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg" />
+              <figcaption class="text-center">username</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-10 col-sm-10">
+            <div class="panel panel-default arrow left">
+              <div class="panel-body">
+                <header class="text-left">
+                  <div class="comment-user"><i class="fa fa-user"></i>Skapad av: {{comment.author}}</div>
+                  <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i>{{comment.created}}</time>
+                <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-thumbs-down"></i>Rapportera</a></p>
+                </header>
+                <div class="comment-post">
+                  <p>
+                    {{comment.body}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+</div>
