@@ -2,7 +2,7 @@ angular.module('rate-my-school.controllers', [])
 
     .controller('SchoolsCtrl', function($scope, schools){
         $scope.schools = schools;
-        console.log($scope.schools);
+        $scope.filterSchools = '';
     })
 
     .controller('SchoolDetailsCtrl', function($scope, $routeParams, schools, RatingFactory){
