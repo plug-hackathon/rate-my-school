@@ -31,7 +31,9 @@ angular.module('rate-my-school.controllers', [])
             });
             }
         }
-	
+
+        $scope.ratings = RatingFactory.query({schoolId:$scope.school.objectId});
+        
         window.fbAsyncInit = function() {
             Parse.FacebookUtils.init({
             appId      : '465399856995721',
