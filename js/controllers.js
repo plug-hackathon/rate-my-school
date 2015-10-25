@@ -5,7 +5,7 @@ angular.module('rate-my-school.controllers', [])
         console.log($scope.schools);
     })
 
-    .controller('SchoolDetailsCtrl', function($scope, $routeParams, schools){
+    .controller('SchoolDetailsCtrl', function($scope, $routeParams, schools, RatingFactory){
 
         schools.forEach(function (school) {
             if (school.objectId === $routeParams.id) {
@@ -18,7 +18,8 @@ angular.module('rate-my-school.controllers', [])
 
         function statusChangeCallback(response) {
             if (response.status === 'connected') {
-            console.log('sent ratings');
+                sendRatings()
+                //console.log('sent ratings');
             } else {
             Parse.FacebookUtils.logIn(null, {
                 success: function(user) {
@@ -59,17 +60,28 @@ angular.module('rate-my-school.controllers', [])
         $scope.facilitiesRate = 5;
         $scope.foodRate = 5;
 
-	$scope.commentText = "";
+	    $scope.commentText = "";
 	
-	$scope.authenticate = function() {
-	    //	    checkLoginState();
-	    FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
+	    $scope.authenticate = function() {
+	        //	    checkLoginState();
+	        FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
             });
-	};
+	    };
 
-	function sendRatings() {
-	    console.log('ratings sent');
+	    function sendRatings() {
+	        console.log('trying to send rating.......');            
+            rating = new RatingFactory();
+            rating.schoolId = $scope.school.objectId;
+            rating.teachersRate = $scope.teachersRate;
+            rating.environmentRate = $scope.environmentRate;
+            rating.facilitiesRate = $scope.facilitiesRate;
+            rating.foodRate = $scope.foodRate;
+            rating.commentText = $scope.commentText;
+            console.log(rating);
+            rating.$save();
+	        console.log('sending done.');            
+            
 	    // TODO: Post the data collected from the view
             // $scope.teachersRate = 5;
             // $scope.environmentRate = 5;
