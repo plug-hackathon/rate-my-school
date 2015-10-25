@@ -18,8 +18,7 @@ angular.module('rate-my-school.controllers', [])
 
         function statusChangeCallback(response) {
             if (response.status === 'connected') {
-                sendRatings()
-                //console.log('sent ratings');
+                sendRatings();
             } else {
             Parse.FacebookUtils.logIn(null, {
                 success: function(user) {
@@ -32,7 +31,7 @@ angular.module('rate-my-school.controllers', [])
             }
         }
 
-        $scope.ratings = RatingFactory.query({schoolId:$scope.school.objectId});
+        $scope.ratings = RatingFactory.query({where: {schoolId: $scope.school.objectId}});
         
         window.fbAsyncInit = function() {
             Parse.FacebookUtils.init({
@@ -64,10 +63,7 @@ angular.module('rate-my-school.controllers', [])
 
 	    $scope.commentText = "";
 
-        $scope.comment= {author: 'Nisse', body: 'Har gick jag', created: '14 Maj 2015'};
-	
 	    $scope.authenticate = function() {
-	        //	    checkLoginState();
 	        FB.getLoginStatus(function(response) {
                 statusChangeCallback(response);
             });
@@ -88,3 +84,4 @@ angular.module('rate-my-school.controllers', [])
 	}
 	
     });
+
