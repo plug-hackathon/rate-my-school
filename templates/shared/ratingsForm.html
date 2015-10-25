@@ -2,22 +2,22 @@
 <div>
     <div>
         Larare:
-        <uib-rating ng-model="teachersRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        <uib-rating ng-model="$parent.teachersRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
     </div>
     
     <div>
         Miljo:
-        <uib-rating ng-model="environmentRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        <uib-rating ng-model="$parent.environmentRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null"></uib-rating>
     </div>
 
     <div>
         Lokaler:
-        <uib-rating ng-model="facilitiesRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        <uib-rating ng-model="$parent.facilitiesRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" ></uib-rating>
     </div>
 
     <div>
         Bespisning:
-        <uib-rating ng-model="foodRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+        <uib-rating ng-model="$parent.foodRate" max="maxRate" readonly="false" on-hover="hoveringover(value)" on-leave="overstar = null"></uib-rating>
     </div>
 </div>
 
