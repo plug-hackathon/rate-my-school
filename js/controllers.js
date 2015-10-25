@@ -5,7 +5,7 @@ angular.module('rate-my-school.controllers', [])
         $scope.filterSchools = '';
     })
 
-    .controller('SchoolDetailsCtrl', function($scope, $routeParams, schools, RatingFactory){
+    .controller('SchoolDetailsCtrl', function($scope, $routeParams, schools){
 
         schools.forEach(function (school) {
             if (school.objectId === $routeParams.id) {
@@ -15,7 +15,8 @@ angular.module('rate-my-school.controllers', [])
         });
 
         Parse.initialize("3OWEYftfHGwWpvZ612fvlcxHef9ilMcNQhdgAJdj", "ScisaMB6uGwqLjesSyUlTYZfBnOkqyv69Uhveiss");
-
+	var Rating = Parse.Object.extend("ratings");
+	
         function statusChangeCallback(response) {
             if (response.status === 'connected') {
                 sendRatings();
@@ -30,8 +31,6 @@ angular.module('rate-my-school.controllers', [])
             });
             }
         }
-
-        $scope.ratings = RatingFactory.query({where: {schoolId: $scope.school.objectId}});
         
         window.fbAsyncInit = function() {
             Parse.FacebookUtils.init({
@@ -50,12 +49,30 @@ angular.module('rate-my-school.controllers', [])
         }(document, 'script', 'facebook-jssdk'));
 	
         $scope.maxRate = 10;
+	var x = 0;
+	var query = new Parse.Query(Rating);
+	query.equalTo("schoolId", $scope.school.objectId);
+	query.find({
+	    success: function(results) {
+		$scope.ratingsQuantity = results.length;
+		for (var i = 0; i < results.length; i++) {
+		    var object = results[i];
+		    console.log(object.id + ' - ' + object.get('commentText'));
+		    x += 1;
+		}
+	    },
+	    error: function(error) {
+		alert("Error: " + error.code + " " + error.message);
+	    }
+	});
 
-        $scope.teacherAverage = 5;
+	console.log(x);
+	console.log($scope.ratingsQuantity + " quantity");
+	$scope.teacherAverage = 5;
         $scope.environmentAverage = 5;
         $scope.facilitiesAverage = 5;
         $scope.foodAverage = 5;
-
+	
         $scope.teachersRate = 5;
         $scope.environmentRate = 5;
         $scope.facilitiesRate = 5;
@@ -71,17 +88,24 @@ angular.module('rate-my-school.controllers', [])
 
 	    function sendRatings() {
 	        console.log('trying to send rating.......');            
-            rating = new RatingFactory();
-            rating.schoolId = $scope.school.objectId;
-            rating.teachersRate = $scope.teachersRate;
-            rating.environmentRate = $scope.environmentRate;
-            rating.facilitiesRate = $scope.facilitiesRate;
-            rating.foodRate = $scope.foodRate;
-            rating.commentText = $scope.commentText;
-            console.log(rating);
-            rating.$save();
-            location.reload();
-	}
-	
-    });
+		var rating = new Rating();
 
+		rating.set("schoolId", $scope.school.objectId);
+		rating.set("teachersRate", $scope.teachersRate);
+		rating.set("environmentRate", $scope.environmentRate);
+		rating.set("facilitiesRate", $scope.facilitiesRate);
+		rating.set("foodRate", $scope.foodRate);
+		rating.set("commentText", $scope.commentText);
+		
+		console.log(rating);
+		rating.save(null, {
+		    success: function(rating) {
+			alert('New object created with objectId: ' + rating.id);
+		    },
+		    error: function(rating, error) {
+			alert('Failed to create new object, with error code: ' + error.message);
+		    }
+		});
+		location.reload();
+	    }
+    });

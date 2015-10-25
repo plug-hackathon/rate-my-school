@@ -12,38 +12,4 @@ angular.module('rate-my-school.factories', ['ngResource'])
                 }
             }
         });
-    })
-
-    .factory('SchoolDetailsFactory', function($resource) {
-        return $resource('js/data/school/:id.json', {}, {
-            query: { method: "GET", isArray: false }
-            
-        });
-    })
-
-    .factory('RatingFactory', function($resource) {
-        return $resource('https://api.parse.com/1/classes/ratings', {}, {
-            query: { method: "GET",
-                     isArray: false,
-                     transformRequest: function(obj) {
-                         var str = [];
-                         for(var p in obj)
-                             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-                         return str.join("&");
-                     },
-                     headers: {
-                         'X-Parse-Application-Id': '3OWEYftfHGwWpvZ612fvlcxHef9ilMcNQhdgAJdj',
-                         'X-Parse-REST-API-Key': 'MBxmR1PkYj3dise2KBCozWPaUd9ZUAyAZhw6wFME',
-                         'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'
-                     }
-                   },
-            save: {
-                method: "POST",
-                headers: {
-                    'X-Parse-Application-Id': '3OWEYftfHGwWpvZ612fvlcxHef9ilMcNQhdgAJdj',
-                    'X-Parse-REST-API-Key': 'MBxmR1PkYj3dise2KBCozWPaUd9ZUAyAZhw6wFME'
-                }
-            }
-            
-        });
     });
