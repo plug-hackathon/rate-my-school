@@ -4,21 +4,31 @@
       <h2 class="page-header">Comments</h2>
       <section class="comment-list" ng-repeat="comment in ratings.results">
         <article class="row">
-          <div class="col-md-2 col-sm-2 hidden-xs">
-            <figure class="thumbnail">
-              <img class="img-responsive" src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg" />
-              <figcaption class="text-center">username</figcaption>
-            </figure>
-          </div>
           <div class="col-md-10 col-sm-10">
             <div class="panel panel-default arrow left">
               <div class="panel-body">
                 <header class="text-left">
-                  <div class="comment-user"><i class="fa fa-user"></i>Skapad av: {{comment.author}}</div>
-                  <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i>{{comment.created}}</time>
-                <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-thumbs-down"></i>Rapportera</a></p>
+                  <time class="comment-date" datetime="">{{comment.createdAt | date:'MM-dd-yyyy'}}</time>
                 </header>
-                <div class="comment-post">
+                    <ul class="averageRatings">
+                        <li>
+                            Larare: 
+                            <uib-rating ng-model="comment.teachersRate" max="comment.teachersRate" readonly="true"></uib-rating>
+                        </li>
+                        <li>
+                            Miljo:
+                            <uib-rating ng-model="comment.environmentRate" max="comment.environmentRate" readonly="true"></uib-rating>
+                        </li>
+                        <li>
+                            Lokaler:
+                            <uib-rating ng-model="facilitiesRate" max="facilitiesRate" readonly="true" ></uib-rating>
+                        </li>
+                        <li>
+                            Bespisning:
+                            <uib-rating ng-model="foodRate" max="foodRate" readonly="true"></uib-rating>
+                        </li>
+                    </ul>
+                    <div class="comment-post">
                   <p>
                     {{comment.commentText}}
                   </p>
